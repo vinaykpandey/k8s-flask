@@ -1,0 +1,11 @@
+mysql:
+  image: mysql:latest
+  container_name: mysql
+  environment:
+      MYSQL_ROOT_PASSWORD: password
+web:
+  build: .
+  ports:
+   - "5000:5000"
+  links:
+   - mysql:mysql
